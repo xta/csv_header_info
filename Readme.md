@@ -14,4 +14,4 @@ Show basic CSV header column info
 
 ## Tests
 
-    TODO
+    python3 -m unittest discover -s test/

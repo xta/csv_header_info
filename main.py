@@ -4,19 +4,7 @@
 import csv
 import sys
 from tabulate import tabulate
-
-def stats(headers):
-    """
-    Returns header column data
-    """
-
-    rows = []
-
-    for index, column in enumerate(headers):
-        row = [column, index+1, index]
-        rows.append(row)
-
-    return rows
+import header
 
 if __name__ == '__main__':
 
@@ -25,7 +13,7 @@ if __name__ == '__main__':
 
         INPUT_HEADERS = next(READER, None)
         if INPUT_HEADERS:
-            COLUMNS = stats(INPUT_HEADERS)
+            COLUMNS = header.stats(INPUT_HEADERS)
 
             OUTPUT_HEADER = ["Column", "Position", "Index"]
             print(tabulate(COLUMNS, OUTPUT_HEADER, tablefmt="grid"))
